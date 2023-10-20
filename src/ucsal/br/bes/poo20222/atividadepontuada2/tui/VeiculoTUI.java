@@ -30,15 +30,15 @@ public class VeiculoTUI {
 		try {
 
 			VeiculoDAO.adicionar(new Moto(placa, anoFabric, valor, categoria, quantCilindros));
+			if (valor >= 0 && quantCilindros >= 0) {
+				System.out.println("MOTO CADASTRADA");
+			}
 
 		} catch (NegocioException e) {
 
 			System.out.println(e.getMessage());
 			System.out.println("MOTO NÃO CADASTRADA");
 
-		}
-		if (valor >= 0 && quantCilindros >= 0) {
-			System.out.println("MOTO CADASTRADA");
 		}
 
 	}
@@ -62,16 +62,18 @@ public class VeiculoTUI {
 			VeiculoDAO
 					.adicionar(new VeiculoCarga(placa, anoFabric, valor, capCargaMax, quantEixos, capTanqCombustivel));
 
+			if (valor >= 0 && capCargaMax >= 0 && quantEixos >= 0) {
+				System.out.println("VEICULO DE CARGA CADASTRADO");
+
+			}
+			
 		} catch (NegocioException e) {
 
 			System.out.println(e.getMessage());
 			System.out.println("VEICULO DE CARGA NÃO CADASTRADO");
 
 		}
-		if (valor >= 0 && capCargaMax >= 0 && quantEixos >= 0) {
-			System.out.println("VEICULO DE CARGA CADASTRADO");
 
-		}
 	}
 
 	public static void cadastrarVeiculoPasseio() {
@@ -88,13 +90,14 @@ public class VeiculoTUI {
 		Double capPortaMalas = scan.nextDouble();
 		try {
 			VeiculoDAO.adicionar(new VeiculoPasseio(placa, anoFabric, valor, quantPassageiroMax, capPortaMalas));
+			if (valor >= 0 && quantPassageiroMax >= 0 && capPortaMalas >= 0) {
+				System.out.println("VEICULO DE PASSEIO CADASTRADO");
+			}
+
 		} catch (NegocioException e) {
 			System.out.println(e.getMessage());
 			System.out.println("VEICULO DE PASSEIO NÃO CADASTRADO");
 
-		}
-		if (valor >= 0 && quantPassageiroMax >= 0 && capPortaMalas >= 0) {
-			System.out.println("VEICULO DE PASSEIO CADASTRADO");
 		}
 
 	}

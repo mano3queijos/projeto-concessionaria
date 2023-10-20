@@ -9,6 +9,8 @@ public class PessoaTUI {
 
 	private static Scanner scan = new Scanner(System.in);
 
+	
+	// fazer um tratamento caso sej ainserido um valor nulo
 	public static void cadastrarPessoa() {
 		System.out.println("*********** CADASTRAR PESSOA ***********");
 		System.out.println("Informe o cpf Do Comprador");
